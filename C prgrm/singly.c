@@ -61,9 +61,12 @@ return s;
 printf("Empty list \n");
 return s;
 }
-//To display list
-void display (struct node *s)
-{
+// To display list
+void display(struct node *s) {
+    if (s == NULL) {
+        printf("The list is empty.\n");
+        return;
+}
     while(s!=(struct node *)0)
     {
     printf("%d \t",s->data);
