@@ -1,0 +1,31 @@
+<html>
+  <head>
+   <title>Mouse Over Effect and Changebg colors </title>
+    </head>
+    <body>
+    <button type="button"onclick="colorchange();">CHANGE BG COLOR</BUTTON>
+        <h1 id="txt">COMPUTER </h1>
+        <img id="img1" onmouseover="myfunction()" onmouseout="myfunction2()" src="computer2.jpg"></img>
+        <script>
+            var color=["RED","BLUE","GREEN","YELLOW"];
+            var i=0;
+           function colorchange()
+           {
+            document.body.style.backgroundColor = color[i];
+            i = (i + 1) % color.length;
+           }
+            function myfunction()
+            {
+                document.getElementById("img1").src="computer1.jpg";
+                document.getElementById("txt").innerHTML="PIC2";
+            }
+            function myfunction2()
+            {
+                document.getElementById("img1").src="computer2.jpg";
+                document.getElementById("txt").innerHTML="PIC1";
+
+            }
+        </script>
+    </body>
+</html> 
+

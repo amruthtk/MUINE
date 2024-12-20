@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        <h1>String Function & math functions</h1>
+    </body>
+    <sript>
+        document.write("string=Welcome to Javascript");
+        var x ="Welcome to JAVASCRIPT";
+        var y ="programs";
+        document.write("<br>")
+        document.write("Length:x.Length");
+        document.write("substring using slice:",x.slice(11,21));
+        document.write("substring using substr:",x.substr(11,4));
+        document.write("concatination:")

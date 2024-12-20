@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>5 number pruduct</title>
+	</head>
+	<body>
+	<label for="n1">ENTER  NUMBER : </LABEL>
+	<input type="number" id="n1" min="1" required><br><br>
+	<button onclick=root()>CALCULATE PRODUCT</button>
+	<p id="result"></p>
+	<script>
+        function root()
+        {
+        var n=document.getElementById("n1").value
+        document.getElementById("result").innerText="Root is: "+Math.sqrt(n)
+        }
+        </script>
+</body>
+</html>

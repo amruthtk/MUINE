@@ -1,0 +1,14 @@
+p{
+    font-family: monospace;
+    color: maroon;
+    text-align: center;
+    opacity: 0.8;
+}
+a{
+    font-family: monospace;
+    color: red;
+}
+body {
+    background-color: whitesmoke;
+    text-align: center;
+}
