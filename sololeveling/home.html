@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Title */
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+        }
+
+        .btn-secondary {
+            background: #1dd1a1;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Floating Animated Circle */
+        .floating-circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 3s infinite alternate ease-in-out;
+        }
+
+        .circle-1 {
+            top: -20px;
+            left: -20px;
+        }
+
+        .circle-2 {
+            bottom: -20px;
+            right: -20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(15px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Solo Leveling</h1>
+        <p>Organize your tasks and boost your productivity!</p>
+        <button class="btn btn-primary" onclick="startApp()">Get Started</button>
+        <button class="btn btn-secondary" onclick="learnMore()">Learn More</button>
+
+        <!-- Floating Decorative Circles -->
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+    </div>
+
+    <script>
+        function startApp() {
+            alert("Redirecting to your To-Do List...");
+            // Here, you can redirect to the actual To-Do List page
+            // window.location.href = "todo.html";
+        }
+
+        function learnMore() {
+            alert("This is a modern To-Do List to help you manage tasks efficiently.");
+        }
+    </script>
+
+</body>
+</html>

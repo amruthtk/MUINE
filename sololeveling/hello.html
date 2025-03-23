@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Hello Screen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .hello {
+            font-size: 3rem;
+            color: white;
+            position: absolute;
+            opacity: 0;
+            animation: fadeInOut 1.5s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(10px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const languages = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao", "こんにちは", "안녕하세요", "你好"];
+        let index = 0;
+
+        function showHello() {
+            const helloText = document.createElement("div");
+            helloText.className = "hello";
+            helloText.textContent = languages[index];
+            document.body.appendChild(helloText);
+
+            setTimeout(() => {
+                helloText.remove();
+            }, 1500);
+
+            index = (index + 1) % languages.length;
+        }
+
+        setInterval(showHello, 750);
+        showHello();
+    </script>
+</body>
+</html>

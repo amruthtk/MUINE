@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Improvement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #C9d6ff;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .options {
+            margin-top: 30px;
+        }
+
+        /* Bigger Buttons */
+        .btn {
+            padding: 30px 60px;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+            width: 350px;
+            height: 150px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Language Button with Background Image */
+        #languageBtn {
+            background-image: url("lang.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Fitness Button with Background Image */
+        #fitnessBtn {
+            background-image: url("fitness.webp");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Hover Effect: Buttons Pop Up */
+        .btn:hover {
+            transform: scale(1.15);
+        }
+
+        .selected {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .languages {
+            margin-top: 20px;
+        }
+
+        /* Bigger Language Buttons */
+        .language-btn {
+            background-color: lightgray;
+            border: none;
+            padding: 20px 40px;
+            margin: 15px;
+            font-size: 26px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .language-btn:hover {
+            background-color: gray;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .language-selected {
+            background-color: #28a745 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body onload="document.body.style.opacity='1'">
+
+    <h2>Which skill do you want to improve?</h2>
+    <div class="options">
+        <button class="btn" id="languageBtn" onclick="selectOption('language')">Language</button>
+        <button class="btn" id="fitnessBtn" onclick="selectOption('fitness')">Fitness</button>
+    </div>
+
+    <div id="languageOptions" class="hidden">
+        <h3 style="font-size: 30px;">Select a Language:</h3>
+        <button class="language-btn" onclick="selectLanguage(this)">English</button>
+        <button class="language-btn" onclick="selectLanguage(this)">Spanish</button>
+        <button class="language-btn" onclick="selectLanguage(this)">French</button>
+        <button class="language-btn" onclick="selectLanguage(this)">German</button>
+    </div>
+
+    <script>
+        function selectOption(option) {
+            const languageBtn = document.getElementById("languageBtn");
+            const fitnessBtn = document.getElementById("fitnessBtn");
+            const languageOptions = document.getElementById("languageOptions");
+
+            if (option === 'language') {
+                languageBtn.classList.add("selected");
+                fitnessBtn.classList.remove("selected");
+                languageOptions.classList.remove("hidden");
+            } else {
+                fitnessBtn.classList.add("selected");
+                languageBtn.classList.remove("selected");
+                languageOptions.classList.add("hidden");
+            }
+        }
+
+        function selectLanguage(selectedBtn) {
+            document.querySelectorAll(".language-btn").forEach(btn => {
+                btn.classList.remove("language-selected");
+            });
+            selectedBtn.classList.add("language-selected");
+        }
+    </script>
+
+</body>
+</html>
